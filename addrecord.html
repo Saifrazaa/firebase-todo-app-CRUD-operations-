@@ -17,9 +17,9 @@
   </script>
 
 <div class="form-group">
-  <label class="control-label col-sm-2" for="pwd">Description</label>
+  <label class="control-label col-sm-2" for="pwd">Add Todo:</label>
   <div class="col-sm-10">
-    <input type="text" name="todo" class="form-control" id="todo" placeholder="add description of your todo">
+    <input type="text" name="todo" class="form-control" id="todo" placeholder="add todo">
     <div id="todo_msg"></div>
   </div>
 </div>
@@ -31,8 +31,11 @@
 </div>
 </div>
 <hr>
+<center><p style="font-size:30px" ><strong class="alert alert-warning">All Your Todos</strong></p></center>
+<hr>
+<table class='table table-bordered'id="description" >
 
-<div id="description"></div>
+</table>
 <script src="hub.js" ></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

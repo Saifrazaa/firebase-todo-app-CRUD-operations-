@@ -35,18 +35,43 @@ var firebaseref=firebase.database().ref('Todo');
 firebaseref.on("value",getResponse,getError);
 function getResponse(response){
   var description=document.getElementById('description');
+
+
+
   description.innerHTML="";
   var objects=response.val();
   var todos=Object.keys(objects);
 
+
+
   for(var i=0 ; i< todos.length ; i++)
   {
     var t=todos[i];
+
+  console.log(t);
     var todo=objects[t].Todo;
-    console.log(todo);
-    description.innerHTML+="<table class='table table-bordered'><tr><td >Todo :"+i+"</td><td >"+todo+"</td><td class='btn btn-danger'>Delete</td><td class='btn btn-primary'>Edit</td></tr></table>";
-}
-}
+
+    description.innerHTML+="<td >Todo :"+i+"</td><td >"+todo+"</td><td><a class='btn btn-danger' id='delbtn'  onclick='deltodo("+i+")'>Delete</a></td><td ><a class='btn btn-primary'>Edit</a></td>";
+
+
+  }
+  }
+
 function getError(error){
   console.log(error);
+}
+function deltodo(i)
+{
+  console.log(i);
+  var delRef=firebase.database().ref();
+  firebaseref.on("value",getResponse,getError);
+  function getResponse(response){
+    var objects=response.val();
+    var todos=Object.keys(objects);
+    for(var v=0 ;v<todos.length; v++)
+    {
+
+    }
+
+}
 }
