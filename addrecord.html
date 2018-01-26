@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div class="container" style="margin-top:50px" >
+  <center><p style="font-size:50px" class="alert alert-primary"><strong >Welcome to todo app</strong></p></center>
+<hr>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDYRvbBvLnw_hSlV26LYEgkl9nwblEN1r0",
+      authDomain: "helperinstreet.firebaseapp.com",
+      databaseURL: "https://helperinstreet.firebaseio.com",
+      projectId: "helperinstreet",
+      storageBucket: "helperinstreet.appspot.com",
+      messagingSenderId: "254493913403"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+<div class="form-group">
+  <label class="control-label col-sm-2" for="pwd">Description</label>
+  <div class="col-sm-10">
+    <input type="text" name="todo" class="form-control" id="todo" placeholder="add description of your todo">
+    <div id="todo_msg"></div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <center><button onclick="addtodo()" class="btn btn-success">Add</button></center>
+  </div>
+</div>
+</div>
+<hr>
+
+<div id="description"></div>
+<script src="hub.js" ></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
