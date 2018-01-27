@@ -1,5 +1,6 @@
 {
   "projects": {
-    "master": "helperinstreet"
+    "master": "helperinstreet",
+    "default": "helperinstreet"
   }
 }

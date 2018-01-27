@@ -22,7 +22,6 @@ function addtodo(){
   }).catch(function(error){
 //console.log(error);
 });
-
 }
 var firebaseref=firebase.database().ref('Todo');
 firebaseref.on("value",getResponse,getError);
@@ -92,5 +91,4 @@ function updatetodo()
     firebase.database().ref("Todo").update(updates);
     alert("Successfully updated the Record");
     $("#disappear").hide();
-
-    }
+}
