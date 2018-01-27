@@ -48,10 +48,10 @@ function getResponse(response){
   {
     var t=todos[i];
 
-  console.log(t);
+  
     var todo=objects[t].Todo;
 
-    description.innerHTML+="<td >Todo :"+i+"</td><td >"+todo+"</td><td><a class='btn btn-danger' id='delbtn'  onclick='deltodo("+i+")'>Delete</a></td><td ><a class='btn btn-primary'>Edit</a></td>";
+    description.innerHTML+="<td >Todo :"+i+"</td><td >"+todo+"</td><td><a class='btn btn-danger' id='delbtn'  onclick='deltodo("+i+")'>Delete</a></td><td ><a class='btn btn-primary' id='edit' onclick='edittodo("+i+")'>Edit</a></td>";
 
 
   }
@@ -62,16 +62,56 @@ function getError(error){
 }
 function deltodo(i)
 {
-  console.log(i);
-  var delRef=firebase.database().ref();
-  firebaseref.on("value",getResponse,getError);
-  function getResponse(response){
+
+  var delRef=firebase.database().ref("Todo");
+  delRef.once("value",function(response){
     var objects=response.val();
     var todos=Object.keys(objects);
-    for(var v=0 ;v<todos.length; v++)
-    {
+      var key=todos[i];
+      firebase.database().ref("Todo").child(key).remove();
 
-    }
+  })
+  }
+  function edittodo(j)
+  {
+    
+    var delRef=firebase.database().ref("Todo");
+  delRef.once("value",function(response){
+  var objects=response.val();
+  var edit=objects.Todo;
+
+  var todos=Object.keys(objects);
+  
+  for(var i=0 ; i< todos.length ; i++)
+  {
+    var t=todos[i];
+
+    var value=i;
+    var todo=objects[t].Todo;
+
+    var object=[];
+    object.push(i,todo,todos[j]);
+    if(object[0]===j)
+    {
+      
+      var edit=object[1];
+      
+      var key=object[2];
+      var edittodo=document.getElementById("edit_todo_data");
+      var keytodo=document.getElementById("edit_todo_key");
+      var update=document.getElementById("update-btn");
+      edittodo.value=edit;
+      keytodo.value=key;
+      update.innerHTML="<center><button class='btn btn-primary' onclick='updatetodo()' >Update Todo</button></center>"
+    
+     }
+}
+})
 
 }
+function updatetodo()
+{
+  var updatetodo=document.getElementById("edit_todo_data").value;
+  var updatekey=document.getElementById("edit_todo_key").value;
+  console.log(updatekey);
 }
