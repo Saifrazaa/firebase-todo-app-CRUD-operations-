@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <div class="container" style="margin-top:50px" >
   <center><p style="font-size:50px" class="alert alert-primary"><strong >Welcome to todo app</strong></p></center>
 <hr>
@@ -26,13 +28,15 @@
 
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-10">
-    <center><button onclick="addtodo()" class="btn btn-success">Add</button></center>
+    <center><button onclick="addtodo()" id="todoadd" class="btn btn-success">Add</button></center>
   </div>
 </div>
 </div>
 <hr>
-<div id="disappear">
-<div class="form-group">
+<div id="disappear" class="container">
+  <center>
+    <p style="font-size:20px;font-family:algerian" class="alert alert-success"><strong>Edit Your Todo:</strong></p>
+<div class="form-group" >
   <div class="col-sm-offset-2 col-sm-10" id="key">
     <input type="text" id="edit_todo_data" class="form-control" />
 
@@ -46,11 +50,12 @@
 </div>
 
 </div>
-<div class="form-group">
+<div class="form-group" >
   <div class="col-sm-offset-2 col-sm-10" id="update-btn">
-
+    <center><button class="btn btn-primary" onclick="updatetodo()" id="updatebtn" >Update Todo</button></center>
   </div>
 </div>
+</center>
 </div>
 <hr>
 <center><p style="font-size:30px" ><strong class="alert alert-warning">All Your Todos</strong></p></center>
